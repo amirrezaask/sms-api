@@ -1,9 +1,9 @@
 <?php
 
-namespace Models;
+namespace Services\SMSProvider\Models;
 
 
-class NewSMSRequest 
+class SMSProviderPayload 
 {
     private string $body;
     private string $number;
