@@ -5,15 +5,15 @@ namespace Database;
 
 use PDO;
 
-class DatabaseContext
+class DatabaseContext extends PDO
 {
     private DatabaseContext $singletonInstance;
     private DatabaseConfig $config;
-    private PDO $pdo;
+
     public function __construct()
     {
         $this->config = new DatabaseConfig();
-
+        parent::__construct($this->config->DSN(), $this->config->getUsername(), $this->config->getPassword());
     }
     
     public static function getInstance() : DatabaseContext

@@ -1,9 +1,6 @@
 <?php
 
-
-
 namespace Database;
-
 
 class DatabaseConfig 
 {
@@ -11,17 +8,19 @@ class DatabaseConfig
     private string $port;
     private string $username;
     private string $password;
+    private string $dbname;
     
     public function __construct()
     {
-        $this->host = getEnv("MYSQL_HOST") ?? "localhost";
-        $this->port = getEnv("MYSQL_PORT") ?? "3306";
-        $this->username = getEnv("MYSQL_USERNAME") ?? "root";
-        $this->port = getEnv("MYSQL_PASSWORD") ?? "";   
+        $this->host = getenv("MYSQL_HOST") ?? "localhost";
+        $this->port = getenv("MYSQL_PORT") ?? "3306";
+        $this->username = getenv("MYSQL_USERNAME") ?? "root";
+        $this->port = getenv("MYSQL_PASSWORD") ?? "";   
+        $this->dbname = getenv("MYSQL_NAME") ?? "SMSLog";
     }
     public function DSN(): string 
     {
-        
+        return "mysql://host=$this->host:$this->port;dbname=$this->dbname";
     }
     /**
      * Get the value of host
