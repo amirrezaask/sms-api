@@ -1,0 +1,16 @@
+{
+    "name": "amirreza/sms-api",
+    "description": "SMS Api project",
+    "type": "project",
+    "license": "GPL-v3",
+    "authors": [
+        {
+            "name": "amirrezaask",
+            "email": "raskarpour@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/routing": "^5.1",
+        "symfony/http-foundation": "^5.1"
+    }
+}
