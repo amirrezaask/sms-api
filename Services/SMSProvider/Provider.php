@@ -3,10 +3,10 @@
 
 namespace SMSProvider;
 
-use Services\SMSProvider\Models\SMSProviderPayload;
-use Services\SMSProvider\Models\SMSResponse;
+use Services\SMSProvider\Models\SMSProviderRequest;
+use Services\SMSProvider\Models\SMSProviderResponse;
 
 interface SMSProvider 
 {
-    public function send(SMSProviderPayload $payload): SMSResponse;
+    public function send(SMSProviderRequest $reqeust): SMSProviderResponse;
 }

@@ -4,7 +4,7 @@
 namespace Services\SMSProvider\Models;
 
 
-class SMSResponse 
+class SMSProviderResponse 
 {
 
 }

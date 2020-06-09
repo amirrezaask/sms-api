@@ -3,6 +3,7 @@
 namespace Controllers;
 
 
-class ReportController {
+class ReportController 
+{
     
 }

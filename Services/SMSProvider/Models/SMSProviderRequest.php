@@ -3,12 +3,12 @@
 namespace Services\SMSProvider\Models;
 
 
-class SMSProviderPayload 
+class SMSProviderRequest 
 {
     private string $body;
     private string $number;
 
-    public function NewSMSRequest(string $body, $number) 
+    public function SMSProviderRequest(string $body, $number) 
     {
         $this->body = $body;
         $this->number = $number;

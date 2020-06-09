@@ -2,6 +2,7 @@
 
 namespace Models;
 
+use Symfony\Component\HttpFoundation\Request;
 
 class NewSMSRequest 
 {
@@ -14,7 +15,11 @@ class NewSMSRequest
         $this->number = $number;
     }
     
-
+    public static function fromGlobals(): NewSMSRequest 
+    {
+        $request = Request::createFromGlobals();
+        return new NewSMSRequest($request->query->get("number"), $request->query->get("body"));
+    }
     /**
      * Get the value of number
      */ 
