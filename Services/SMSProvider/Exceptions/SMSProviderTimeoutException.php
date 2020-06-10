@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Services\SMSProvider\Exceptions;
+namespace Services\SMS\Exceptions;
 
 use Exception;
 

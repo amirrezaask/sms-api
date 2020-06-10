@@ -1,12 +1,12 @@
 <?php
 
 
-namespace SMSProvider;
+namespace Services\SMSProvider;
 
 use Services\SMSProvider\Models\SMSProviderRequest;
 use Services\SMSProvider\Models\SMSProviderResponse;
 
-interface SMSProvider 
+interface Provider 
 {
     public function send(SMSProviderRequest $reqeust): SMSProviderResponse;
 }

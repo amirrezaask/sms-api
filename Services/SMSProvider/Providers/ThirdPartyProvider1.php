@@ -1,14 +1,14 @@
 <?php
 
 
-namespace Services\SMSProvider;
+namespace Services\SMSProvider\Providers;
 
-use Services\SMSProvider\Models\SMSProviderPayload;
 use Services\SMSProvider\Models\SMSProviderRequest;
 use Services\SMSProvider\Models\SMSProviderResponse;
-use SMSProvider\SMSProvider;
+use Services\SMSProvider\SMSProvider as SMSProviderSMSProvider;
+use Services\SMSProvider\Provider;
 
-class ThirdPartyProvider1 implements SMSProvider
+class ThirdPartyProvider1 implements Provider
 {
     private string $route = "http://localhost:81";
     

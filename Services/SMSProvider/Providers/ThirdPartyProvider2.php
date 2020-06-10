@@ -6,9 +6,9 @@ namespace Services\SMSProvider;
 use Services\SMSProvider\Models\SMSProviderPayload;
 use Services\SMSProvider\Models\SMSProviderRequest;
 use Services\SMSProvider\Models\SMSProviderResponse;
-use SMSProvider\SMSProvider;
+use Services\SMSProvider\Provider;
 
-class ThirdPartyProvider2 implements SMSProvider
+class ThirdPartyProvider2 implements Provider
 {
     private string $route = "http://localhost:82";
     
