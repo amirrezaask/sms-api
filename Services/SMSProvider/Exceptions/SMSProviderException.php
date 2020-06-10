@@ -5,7 +5,7 @@ namespace Services\SMSProvider\Exceptions;
 
 use Exception;
 
-class SMSProviderTimeoutException  extends Exception
+class SMSProviderException  extends Exception
 {
     
     public function __construct()

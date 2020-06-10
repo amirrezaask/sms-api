@@ -8,6 +8,7 @@ use Database\DatabaseEntry;
 class RequestLog extends NewSMSRequest implements DatabaseEntry
 {
     private string $table;
+    private int $RequestLogId;
     private int $timestamp;
 
     public function __construct(string $body, $number, int $timestamp)
@@ -42,7 +43,10 @@ class RequestLog extends NewSMSRequest implements DatabaseEntry
          VALUES ($valuesJoined);";
     }
 
-  
+    public function setSuccessTrueStmt(): string
+    {
+        return "UPDATE $this->table SET success=1 WHERE request_log_id=$this->RequestLogId";
+    }
 
     /**
      * Get the value of timestamp
@@ -60,6 +64,28 @@ class RequestLog extends NewSMSRequest implements DatabaseEntry
     public function setTimestamp($timestamp)
     {
         $this->timestamp = $timestamp;
+
+        return $this;
+    }
+
+    
+
+    /**
+     * Get the value of RequestLogId
+     */ 
+    public function getRequestLogId()
+    {
+        return $this->RequestLogId;
+    }
+
+    /**
+     * Set the value of RequestLogId
+     *
+     * @return  self
+     */ 
+    public function setRequestLogId($RequestLogId)
+    {
+        $this->RequestLogId = $RequestLogId;
 
         return $this;
     }

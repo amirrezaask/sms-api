@@ -11,6 +11,7 @@ class InitialMigration implements Migration
             request_log_id INT AUTO_INCREMENT PRIMARY KEY,
             body TEXT,
             number varchar(50),
+            succss boolean DEFAULT FALSE,
             request_time timestamp);",
             
             "CREATE TABLE api_logs (
