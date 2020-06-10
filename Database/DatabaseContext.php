@@ -15,6 +15,14 @@ class DatabaseContext extends PDO
         $this->config = new DatabaseConfig();
         parent::__construct($this->config->DSN(), $this->config->getUsername(), $this->config->getPassword());
     }
+
+    public function migrate(array $migrations) 
+    {
+        foreach ($migrations as $migration)
+        {
+                $this->query($migration->up());
+        }
+    }
     
     public static function getInstance() : DatabaseContext
     {
